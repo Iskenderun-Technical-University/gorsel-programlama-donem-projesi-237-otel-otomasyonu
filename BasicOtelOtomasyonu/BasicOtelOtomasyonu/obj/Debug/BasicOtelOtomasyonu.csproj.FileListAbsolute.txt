@@ -1,0 +1,6 @@
+C:\Users\mahmu\source\Hotel\BasicOtelOtomasyonu\BasicOtelOtomasyonu\bin\Debug\BasicOtelOtomasyonu.dll
+C:\Users\mahmu\source\Hotel\BasicOtelOtomasyonu\BasicOtelOtomasyonu\bin\Debug\BasicOtelOtomasyonu.pdb
+C:\Users\mahmu\source\Hotel\BasicOtelOtomasyonu\BasicOtelOtomasyonu\obj\Debug\BasicOtelOtomasyonu.csproj.AssemblyReference.cache
+C:\Users\mahmu\source\Hotel\BasicOtelOtomasyonu\BasicOtelOtomasyonu\obj\Debug\BasicOtelOtomasyonu.csproj.CoreCompileInputs.cache
+C:\Users\mahmu\source\Hotel\BasicOtelOtomasyonu\BasicOtelOtomasyonu\obj\Debug\BasicOtelOtomasyonu.dll
+C:\Users\mahmu\source\Hotel\BasicOtelOtomasyonu\BasicOtelOtomasyonu\obj\Debug\BasicOtelOtomasyonu.pdb
