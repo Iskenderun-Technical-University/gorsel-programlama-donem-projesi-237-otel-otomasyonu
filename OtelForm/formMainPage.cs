@@ -1,5 +1,4 @@
 ﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.Docking.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,10 +23,9 @@ namespace OtelForm
 
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void formMainPage_Load(object sender, EventArgs e)
         {
-            var form1 = new Form1();
-            form1.Show();
+
         }
     }
 }

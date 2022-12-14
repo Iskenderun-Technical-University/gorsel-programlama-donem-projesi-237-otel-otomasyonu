@@ -58,7 +58,7 @@ namespace OtelForm
 
         private void formLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
