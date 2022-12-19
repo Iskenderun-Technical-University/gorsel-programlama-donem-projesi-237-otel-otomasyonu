@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOtelOtomasyonu", "BasicOtelOtomasyonu\BasicOtelOtomasyonu.csproj", "{823F7F83-D3D2-47DB-99D4-A877969ACCD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtelForm", "OtelForm\OtelForm.csproj", "{FB77BF4C-EBF4-44BA-A4C4-74C0EBD9F979}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{823F7F83-D3D2-47DB-99D4-A877969ACCD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{823F7F83-D3D2-47DB-99D4-A877969ACCD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{823F7F83-D3D2-47DB-99D4-A877969ACCD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{823F7F83-D3D2-47DB-99D4-A877969ACCD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB77BF4C-EBF4-44BA-A4C4-74C0EBD9F979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB77BF4C-EBF4-44BA-A4C4-74C0EBD9F979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB77BF4C-EBF4-44BA-A4C4-74C0EBD9F979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB77BF4C-EBF4-44BA-A4C4-74C0EBD9F979}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08B3AD70-6363-4D42-9389-19F26ABF2F73}
+	EndGlobalSection
+EndGlobal

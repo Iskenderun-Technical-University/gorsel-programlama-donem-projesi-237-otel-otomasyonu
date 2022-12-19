@@ -41,7 +41,7 @@ namespace OtelForm
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "OnurTR9" && txtPassword.Text == "OnurTR9")
+            if (txtUserName.Text == "" && txtPassword.Text == "")
             {
                 this.Hide();
                 var mainPage = new formMainPage();
@@ -54,11 +54,6 @@ namespace OtelForm
             }
             
 
-        }
-
-        private void formLogin_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

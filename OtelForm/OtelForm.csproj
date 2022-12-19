@@ -33,12 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BasicOtelOtomasyonu">
+      <HintPath>..\BasicOtelOtomasyonu\bin\Debug\BasicOtelOtomasyonu.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,8 +61,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="formAddroom.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAddroom.Designer.cs">
+      <DependentUpon>formAddroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCustomer.Designer.cs">
+      <DependentUpon>formCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
@@ -67,22 +85,73 @@
     <Compile Include="formMainPage.Designer.cs">
       <DependentUpon>formMainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="musteriKayit.cs">
+    <Compile Include="formMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="musteriKayit.Designer.cs">
-      <DependentUpon>musteriKayit.cs</DependentUpon>
+    <Compile Include="formMessageBox.Designer.cs">
+      <DependentUpon>formMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formReservation.Designer.cs">
+      <DependentUpon>formReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRoom.Designer.cs">
+      <DependentUpon>formRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fromAddReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fromAddReservation.Designer.cs">
+      <DependentUpon>fromAddReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\OdaType.cs" />
+    <Compile Include="Model\Reservation.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="OTELDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OTELDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OTELDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OTELDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OTELDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OTELDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formAddroom.resx">
+      <DependentUpon>formAddroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCustomer.resx">
+      <DependentUpon>formCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formMainPage.resx">
       <DependentUpon>formMainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="musteriKayit.resx">
-      <DependentUpon>musteriKayit.cs</DependentUpon>
+    <EmbeddedResource Include="formMessageBox.resx">
+      <DependentUpon>formMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formReservation.resx">
+      <DependentUpon>formReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formRoom.resx">
+      <DependentUpon>formRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fromAddReservation.resx">
+      <DependentUpon>fromAddReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,6 +163,39 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="OTELDataSet.xsc">
+      <DependentUpon>OTELDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OTELDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OTELDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OTELDataSet.xss">
+      <DependentUpon>OTELDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OTELDataSet1.xsc">
+      <DependentUpon>OTELDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OTELDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OTELDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OTELDataSet1.xss">
+      <DependentUpon>OTELDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OTELDataSet2.xsc">
+      <DependentUpon>OTELDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OTELDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OTELDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OTELDataSet2.xss">
+      <DependentUpon>OTELDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,9 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\formLogin.IconOptions.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

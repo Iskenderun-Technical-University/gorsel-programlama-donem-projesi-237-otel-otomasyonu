@@ -35,8 +35,6 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnAddRoom = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemRadioGroup1 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddHotel = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemRadioGroup2 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
@@ -46,27 +44,27 @@
             this.repositoryItemRadioGroup3 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.btnCreateCustomer = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemRadioGroup4 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
-            this.ribbonPageCategory1 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddRoom = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReservation = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemRadioGroup1 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
-            // 
-            // 
-            // 
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
@@ -75,18 +73,18 @@
             this.barButtonItem1,
             this.barButtonItem2,
             this.barButtonItem3,
-            this.btnAddRoom,
             this.barButtonItem4,
             this.btnAddHotel,
             this.barButtonItem5,
             this.barButtonItem6,
             this.btnCreateReservation,
-            this.btnCreateCustomer});
+            this.btnCreateCustomer,
+            this.btnCustomer,
+            this.btnAddRoom,
+            this.btnReservation});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 11;
+            this.ribbon.MaxItemId = 14;
             this.ribbon.Name = "ribbon";
-            this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
-            this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -123,19 +121,6 @@
             this.barButtonItem3.Id = 3;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // btnAddRoom
-            // 
-            this.btnAddRoom.Caption = "Oda Ekle";
-            this.btnAddRoom.Edit = this.repositoryItemRadioGroup1;
-            this.btnAddRoom.Id = 4;
-            this.btnAddRoom.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddRoom.ImageOptions.SvgImage")));
-            this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barEditItem1_ItemClick);
-            // 
-            // repositoryItemRadioGroup1
-            // 
-            this.repositoryItemRadioGroup1.Name = "repositoryItemRadioGroup1";
-            // 
             // barButtonItem4
             // 
             this.barButtonItem4.Caption = "Otel Ekle";
@@ -149,6 +134,7 @@
             this.btnAddHotel.Id = 6;
             this.btnAddHotel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddHotel.ImageOptions.SvgImage")));
             this.btnAddHotel.Name = "btnAddHotel";
+            this.btnAddHotel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddHotel_ItemClick);
             // 
             // repositoryItemRadioGroup2
             // 
@@ -190,55 +176,63 @@
             // 
             this.repositoryItemRadioGroup4.Name = "repositoryItemRadioGroup4";
             // 
-            // ribbonPageCategory1
+            // btnCustomer
             // 
-            this.ribbonPageCategory1.Name = "ribbonPageCategory1";
-            this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage2,
-            this.ribbonPage3});
-            this.ribbonPageCategory1.Text = "ribbonPageCategory1";
+            this.btnCustomer.Caption = "Müşteriler";
+            this.btnCustomer.Id = 11;
+            this.btnCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.Image")));
+            this.btnCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCustomer.ImageOptions.LargeImage")));
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
             // 
-            // ribbonPage2
+            // btnAddRoom
             // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "Rezervasyonlar";
+            this.btnAddRoom.Caption = "Oda Ekle";
+            this.btnAddRoom.Id = 12;
+            this.btnAddRoom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRoom.ImageOptions.Image")));
+            this.btnAddRoom.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddRoom.ImageOptions.LargeImage")));
+            this.btnAddRoom.Name = "btnAddRoom";
+            this.btnAddRoom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddRoom_ItemClick);
             // 
-            // ribbonPageGroup2
+            // btnReservation
             // 
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "Rezervasyon";
-            // 
-            // ribbonPage3
-            // 
-            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.ribbonPage3.Name = "ribbonPage3";
-            this.ribbonPage3.Text = "Müşteriler";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Müşteriler";
+            this.btnReservation.Caption = "Reservasyon";
+            this.btnReservation.Id = 13;
+            this.btnReservation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReservation.ImageOptions.Image")));
+            this.btnReservation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReservation.ImageOptions.LargeImage")));
+            this.btnReservation.Name = "btnReservation";
+            this.btnReservation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReservation_ItemClick);
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Otel";
             // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Oteller";
-            // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddRoom);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Oda";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnCustomer);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Müşteriler";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnReservation);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Rezervasyonlar";
+            // 
+            // repositoryItemRadioGroup1
+            // 
+            this.repositoryItemRadioGroup1.Name = "repositoryItemRadioGroup1";
             // 
             // ribbonStatusBar
             // 
@@ -246,6 +240,15 @@
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1285, 24);
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "ribbonPage4";
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // formMainPage
             // 
@@ -255,18 +258,20 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("formMainPage.IconOptions.Image")));
+            this.IsMdiContainer = true;
             this.Name = "formMainPage";
             this.Ribbon = this.ribbon;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Onur Otel";
-            this.Load += new System.EventHandler(this.formMainPage_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,22 +287,22 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarEditItem btnAddRoom;
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarEditItem btnAddHotel;
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarEditItem btnCreateReservation;
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup3;
         private DevExpress.XtraBars.BarEditItem btnCreateCustomer;
         private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup4;
+        private DevExpress.XtraBars.BarButtonItem btnCustomer;
+        private DevExpress.XtraBars.BarButtonItem btnAddRoom;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btnReservation;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

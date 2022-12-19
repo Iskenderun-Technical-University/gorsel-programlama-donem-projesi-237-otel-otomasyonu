@@ -23,9 +23,32 @@ namespace OtelForm
 
         }
 
-        private void formMainPage_Load(object sender, EventArgs e)
+        private void btnAddHotel_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //var frm = new frmTest();
+            //frm.MdiParent = this;
+            //frm.Show();
+        }
 
+        private void btnAddRoom_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var frm = new formRoom();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnCustomer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var frm = new formCustomer();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnReservation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var frm = new formReservation();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

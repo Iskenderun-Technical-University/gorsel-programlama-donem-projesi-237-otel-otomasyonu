@@ -93,9 +93,6 @@
             // 
             this.checkEdit1.Location = new System.Drawing.Point(254, 265);
             this.checkEdit1.Name = "checkEdit1";
-            // 
-            // 
-            // 
             this.checkEdit1.Properties.Caption = "Remember me";
             this.checkEdit1.Size = new System.Drawing.Size(93, 20);
             this.checkEdit1.TabIndex = 6;
@@ -109,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(953, 520);
+            this.ClientSize = new System.Drawing.Size(1101, 605);
             this.ControlBox = false;
             this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.simpleButton2);
@@ -125,7 +122,6 @@
             this.Name = "formLogin";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.formLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formLogin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
