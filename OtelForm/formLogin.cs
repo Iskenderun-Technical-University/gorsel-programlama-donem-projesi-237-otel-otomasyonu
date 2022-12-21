@@ -41,7 +41,7 @@ namespace OtelForm
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "admin" && txtPassword.Text == "1234")  //Login kullanıcı adı şifre kontrolü
+            if (txtUserName.Text == "admin" && txtPassword.Text == "123456")  //Login kullanıcı adı şifre kontrolü
             {
                 this.Hide();
                 var mainPage = new formMainPage();
