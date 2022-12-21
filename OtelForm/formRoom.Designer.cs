@@ -40,7 +40,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnRoomDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.btnRoomUpdate = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonRevBitir = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridRoom = new DevExpress.XtraGrid.GridControl();
             this.viewRoom = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -52,7 +52,6 @@
             this.popupRoom = new DevExpress.XtraBars.PopupMenu(this.components);
             this.odaTableAdapter = new OtelForm.OTELDataSetTableAdapters.odaTableAdapter();
             this.musteriTableAdapter = new OtelForm.OTELDataSetTableAdapters.musteriTableAdapter();
-            this.barButtonRevBitir = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -80,7 +79,6 @@
             this.btnAddRoom,
             this.btnClose,
             this.btnRoomDelete,
-            this.btnRoomUpdate,
             this.barButtonRevBitir});
             this.barManager1.MaxItemId = 7;
             // 
@@ -167,13 +165,14 @@
             this.btnRoomDelete.Name = "btnRoomDelete";
             this.btnRoomDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRoomDelete_ItemClick);
             // 
-            // btnRoomUpdate
+            // barButtonRevBitir
             // 
-            this.btnRoomUpdate.Caption = "Güncelleme";
-            this.btnRoomUpdate.Id = 5;
-            this.btnRoomUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRoomUpdate.ImageOptions.Image")));
-            this.btnRoomUpdate.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRoomUpdate.ImageOptions.LargeImage")));
-            this.btnRoomUpdate.Name = "btnRoomUpdate";
+            this.barButtonRevBitir.Caption = "Rezervasyonu bitir";
+            this.barButtonRevBitir.Id = 6;
+            this.barButtonRevBitir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonRevBitir.ImageOptions.Image")));
+            this.barButtonRevBitir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonRevBitir.ImageOptions.LargeImage")));
+            this.barButtonRevBitir.Name = "barButtonRevBitir";
+            this.barButtonRevBitir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevBitir);
             // 
             // layoutControl1
             // 
@@ -241,7 +240,6 @@
             // 
             this.popupRoom.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRoomDelete),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRoomUpdate),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonRevBitir)});
             this.popupRoom.Manager = this.barManager1;
             this.popupRoom.Name = "popupRoom";
@@ -253,15 +251,6 @@
             // musteriTableAdapter
             // 
             this.musteriTableAdapter.ClearBeforeFill = true;
-            // 
-            // barButtonRevBitir
-            // 
-            this.barButtonRevBitir.Caption = "Rezervasyonu bitir";
-            this.barButtonRevBitir.Id = 6;
-            this.barButtonRevBitir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonRevBitir.ImageOptions.Image")));
-            this.barButtonRevBitir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonRevBitir.ImageOptions.LargeImage")));
-            this.barButtonRevBitir.Name = "barButtonRevBitir";
-            this.barButtonRevBitir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevBitir);
             // 
             // formRoom
             // 
@@ -309,7 +298,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarButtonItem btnRoomDelete;
-        private DevExpress.XtraBars.BarButtonItem btnRoomUpdate;
         private DevExpress.XtraBars.PopupMenu popupRoom;
         private OTELDataSet oTELDataSet;
         private System.Windows.Forms.BindingSource odaBindingSource;

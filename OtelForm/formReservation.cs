@@ -28,7 +28,7 @@ namespace OtelForm
 
         void LoadSettings()
         {
-            viewReservation.ExPopup(popupReservation);
+            viewReservation.ExPopup(popupReservation);  //Formda gridview e sütun ekleme kodu
 
             viewReservation.ExAddNewColumn((Reservation x) => x.colMüşteriNo, "Oda Numarası");
             viewReservation.ExAddNewColumn((Reservation x) => x.colAdSoyad, "Oda Tipi");
@@ -47,6 +47,7 @@ namespace OtelForm
 
             using (SqlConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
             {
+                // İleri tarihli rezervasyonları listeleme kodu
                 string odatipi = "SELECT * FROM musteri where gtarihi>=GETDATE();";
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(odatipi, connection))
@@ -82,7 +83,7 @@ namespace OtelForm
 
         private void btnAddReservation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new fromAddReservation();
+            var frm = new fromAddReservation();  // rezervasyon ekleme formunu açar
             frm.ShowDialog();
         }
 
@@ -91,7 +92,7 @@ namespace OtelForm
             var rezervasyonRow = viewReservation.GetFocusedRow() as Reservation;
             if (rezervasyonRow == null) return;
 
-            try
+            try  //seçilen rezervasyonu siler
             {
                 using (var sc = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
                 using (var cmd = sc.CreateCommand())
@@ -123,7 +124,7 @@ namespace OtelForm
             var rezervasyonRow = viewReservation.GetFocusedRow() as Reservation;
             if (rezervasyonRow == null) return;
 
-            try
+            try    //seçilen rezervasyonu aktifleştirme kodu
             {
                 using (var sc = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
                 using (var cmd = sc.CreateCommand())
@@ -155,6 +156,8 @@ namespace OtelForm
             var rezervasyonRow = viewReservation.GetFocusedRow() as Reservation;
             if (rezervasyonRow == null) return;
 
+
+             // rezervasyon formundan rezervasyon güncelleme formuna verileri gönderme kodu
             formRevGuncelle musterino = new formRevGuncelle();
             musterino.label1.Text = rezervasyonRow.colMüşteriNo.ToString();
             musterino.txtName.Text = rezervasyonRow.colAdSoyad;

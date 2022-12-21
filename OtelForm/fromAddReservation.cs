@@ -33,7 +33,7 @@ namespace OtelForm
         {
             try
             {
-                baglanti.Open();
+                baglanti.Open();  //rezervasyon ekleme kodu
                 string kayit = "insert into musteri (isim,tc,telno,odaid,gtarihi,ctarihi,fiyat) values " +
                                                       "(@p1,@p2,@p3,@p4,@p5,@p6,@p7)";
                 SqlCommand ekle = new SqlCommand(kayit, baglanti);
@@ -47,8 +47,8 @@ namespace OtelForm
 
                 ekle.ExecuteNonQuery();
 
-
-                string oda = @"UPDATE oda SET odadurum = 1 WHERE odano = '" + cbRoom.EditValue + "' ";
+                // seçilen odayı dolu yapma
+                string oda = @"UPDATE oda SET odadurum = 1 WHERE  odano = '" + cbRoom.EditValue + "'  ";
                 SqlCommand odaguncelle = new SqlCommand(oda, baglanti);
                 odaguncelle.ExecuteNonQuery();
 

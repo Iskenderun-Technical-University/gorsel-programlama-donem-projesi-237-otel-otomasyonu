@@ -13,7 +13,7 @@ namespace OtelForm
 {
     public partial class formLogin : DevExpress.XtraEditors.XtraForm
     {
-        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int WM_NCLBUTTONDOWN = 0xA1;   // Login Ekranı sürükleme hazır kod;
         public const int HT_CAPTION = 0x2;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -41,7 +41,7 @@ namespace OtelForm
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "" && txtPassword.Text == "")
+            if (txtUserName.Text == "admin" && txtPassword.Text == "1234")  //Login kullanıcı adı şifre kontrolü
             {
                 this.Hide();
                 var mainPage = new formMainPage();

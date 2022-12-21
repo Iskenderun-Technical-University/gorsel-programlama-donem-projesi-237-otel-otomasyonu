@@ -32,6 +32,8 @@ namespace OtelForm
 
         private void formRevGuncelle_Load(object sender, EventArgs e)
         {
+
+            // oda numaralarını cbox a getirme kodu
             SqlConnection baglanti = new SqlConnection();
             baglanti.ConnectionString = "Data Source=.;Initial Catalog=Otel;Integrated Security=True";
             SqlCommand komut = new SqlCommand();
@@ -55,6 +57,7 @@ namespace OtelForm
         {
             try
             {
+                // rezervasyonu güncelleme kodu
                 SqlConnection baglanti = new SqlConnection();
                 baglanti.ConnectionString = "Data Source=.;Initial Catalog=Otel;Integrated Security=True";
                 baglanti.Open();
@@ -81,7 +84,7 @@ namespace OtelForm
 
                 string oda = @"UPDATE oda SET odadurum = 1 WHERE odano = '" + cbRoom.EditValue + "' ";
                 SqlCommand odaguncelle = new SqlCommand(oda, baglanti);
-                odaguncelle.ExecuteNonQuery();
+                odaguncelle.ExecuteNonQuery();  //Seçilen odayı dolu hale getirme kodu
 
                 
 

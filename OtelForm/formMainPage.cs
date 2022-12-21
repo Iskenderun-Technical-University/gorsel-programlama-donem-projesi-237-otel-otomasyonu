@@ -32,23 +32,28 @@ namespace OtelForm
 
         private void btnAddRoom_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var frm = new formRoom();
+            var frm = new formRoom();   // Oda Formunu Açma
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void btnCustomer_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var frm = new formCustomer();
+            var frm = new formCustomer();  // Müşteri Formunu Açma
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void btnReservation_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var frm = new formReservation();
+            var frm = new formReservation(); //Rezervasyon formunu açma
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void formMainPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

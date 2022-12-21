@@ -27,12 +27,12 @@ namespace OtelForm
         void LoadData()
         {
 
-            List<Room> rooms = new List<Room>();
+            List<Room> rooms = new List<Room>();   //Odatipi ve Oda adında Liste oluşturuyoruz
             List<OdaType> odaTypes = new List<OdaType>();
-            using (SqlConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True")) // SQL bağlantı cümlesi
             {
                 connection.Open();
-                string oda = "select * from oda";
+                string oda = "select * from oda where odano!=0";   //Odaları listelemek için veri tabanından çağırma kodu
                 using (SqlCommand command = new SqlCommand(oda, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -51,7 +51,7 @@ namespace OtelForm
                     }
                 }
 
-                string odatipi = "SELECT * FROM odatype";
+                string odatipi = "SELECT * FROM odatype";   //odatipini numara olarak değilde yazı olarak çağırma kodu
 
                 using (SqlCommand command = new SqlCommand(odatipi, connection))
                 {
@@ -71,7 +71,7 @@ namespace OtelForm
                 connection.Close();
             }
 
-            foreach (var room in rooms)
+            foreach (var room in rooms)   // oluşturduğumuz listeleri döngü ile gridviewde listeleme 
             {
                 foreach (var odatype in odaTypes)
                 {
@@ -87,7 +87,7 @@ namespace OtelForm
 
         void LoadSettings()
         {
-            viewRoom.ExPopup(popupRoom);
+            viewRoom.ExPopup(popupRoom);  //grid sütun ekleme kodu
 
             viewRoom.ExAddNewColumn((Room x) => x.OdaNo, "Oda Numarası");
             viewRoom.ExAddNewColumn((Room x) => x.OdaTipi, "Oda Tipi");
@@ -95,7 +95,7 @@ namespace OtelForm
             viewRoom.ExAddNewColumn((Room x) => x.OdaDurumu, "Oda Durumu");
 
 
-            viewRoom.RowStyle += (s, e) =>//Koşula göre renklendirme
+            viewRoom.RowStyle += (s, e) =>//Dolu odaya göre renklendirme
             {
                 var row = (s as GridView).GetRow(e.RowHandle) as Room;
                 if (row == null) return;
@@ -112,7 +112,7 @@ namespace OtelForm
 
         private void btnAddRoom_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new formAddroom();
+            var frm = new formAddroom();  //odaekle fromunu açma kodu
             frm.ShowDialog();
         }
 
@@ -124,11 +124,11 @@ namespace OtelForm
 
         private void btnRoomDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var room = viewRoom.GetFocusedRow() as Room;
+            var room = viewRoom.GetFocusedRow() as Room; //seçilen satıra göre oda silme kodu
 
             if (room == null) return;
 
-            if (room.OdaDurumu == 1)
+            if (room.OdaDurumu == 1)  //odanın dolu olduğunda silinmeyi engelleme kodu
             {
                 var frm = new formMessageBox("Oda şuan dolu");
                 frm.ShowDialog();
@@ -139,12 +139,12 @@ namespace OtelForm
                 using (var sc = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
                 using (var cmd = sc.CreateCommand())
                 {
-                    sc.Open();
-                    cmd.CommandText = "DELETE FROM oda WHERE odano = @odano";
+                    sc.Open();      
+                    cmd.CommandText = "DELETE FROM oda WHERE odano = @odano";   //oda silme kodu
                     cmd.Parameters.AddWithValue("@odano", room.OdaNo);
                     cmd.ExecuteNonQuery();
                 }
-                var frm = new formMessageBox("Oda silindi.");
+                var frm = new formMessageBox("Oda silindi."); 
                 frm.ShowDialog();
                 LoadData();
             }
@@ -173,9 +173,14 @@ namespace OtelForm
                 using (var sc = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
                 using (var cmd = sc.CreateCommand())
                 {
-                    sc.Open();
+                    sc.Open();   // çıkış yapılan odayı boşa çıkarma kodu
                     cmd.CommandText = "update oda set odadurum=0 where odano=@odano";
                     cmd.Parameters.AddWithValue("@odano", roomrow.OdaNo);
+                    cmd.ExecuteNonQuery();
+
+                    
+                    cmd.CommandText = "update musteri set odaid=0 where odaid=@odaid";
+                    cmd.Parameters.AddWithValue("@odaid", roomrow.OdaNo);
                     cmd.ExecuteNonQuery();
                 }
                 LoadData();

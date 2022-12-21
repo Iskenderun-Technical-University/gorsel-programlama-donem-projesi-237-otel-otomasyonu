@@ -196,7 +196,7 @@
             // 
             // btnReservation
             // 
-            this.btnReservation.Caption = "Reservasyon";
+            this.btnReservation.Caption = "Rezervasyon";
             this.btnReservation.Id = 13;
             this.btnReservation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReservation.ImageOptions.Image")));
             this.btnReservation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReservation.ImageOptions.LargeImage")));
@@ -265,6 +265,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Onur Otel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.formMainPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).EndInit();

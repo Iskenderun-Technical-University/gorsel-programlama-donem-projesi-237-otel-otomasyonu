@@ -34,7 +34,7 @@ namespace OtelForm
         {
             try
             {
-                baglanti.Open();
+                baglanti.Open();  //oda ekleme kodu 
                 string kayit = "insert into oda (odano,odadurum,odatipi,odakapasite) values " +
                                                       "(@p1,@p2,@p3,@p4)";
                 SqlCommand ekle = new SqlCommand(kayit, baglanti);
