@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCustomer));
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnShowList = new DevExpress.XtraBars.BarButtonItem();
@@ -43,24 +42,29 @@
             this.btnDeleteCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.btnUpdateCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gridCustomer = new DevExpress.XtraGrid.GridControl();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.viewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMüşteriNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAdSoyad = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTelefonu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOdaNumarası = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGiriştarihi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colÇıkıştarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.musteriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oTELDataSet3 = new OtelForm.OTELDataSet3();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MüsteriNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ADI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Telefon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.OdaNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GirişTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ÇıkışTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Fiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.popupCustomer = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.musteriTableAdapter = new OtelForm.OTELDataSet3TableAdapters.musteriTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musteriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupCustomer)).BeginInit();
@@ -174,7 +178,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.gridCustomer);
+            this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 24);
             this.layoutControl1.Name = "layoutControl1";
@@ -183,100 +187,97 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gridCustomer
+            // gridControl1
             // 
-            this.gridCustomer.DataMember = "Query";
-            this.gridCustomer.DataSource = this.sqlDataSource1;
-            this.gridCustomer.Location = new System.Drawing.Point(12, 12);
-            this.gridCustomer.MainView = this.viewCustomer;
-            this.gridCustomer.MenuManager = this.barManager1;
-            this.gridCustomer.Name = "gridCustomer";
-            this.gridCustomer.Size = new System.Drawing.Size(1020, 370);
-            this.gridCustomer.TabIndex = 4;
-            this.gridCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.viewCustomer});
+            this.gridControl1.DataSource = this.musteriBindingSource;
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.barManager1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1020, 370);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
-            // sqlDataSource1
+            // musteriBindingSource
             // 
-            this.sqlDataSource1.ConnectionName = "localhost_OTEL_Connection 1";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            customSqlQuery1.Name = "Query";
-            customSqlQuery1.Sql = "Select musteriid as \"Müşteri No\" ,isim  as \"Ad Soyad\",tc as \"TC\", telno AS \"Telef" +
-    "onu\",odaid as \"Oda Numarası\" ,ctarihi as \"Giriş tarihi\",gtarihi as \"Çıkış tarihi" +
-    "\" from musteri";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            this.musteriBindingSource.DataMember = "musteri";
+            this.musteriBindingSource.DataSource = this.oTELDataSet3;
             // 
-            // viewCustomer
+            // oTELDataSet3
             // 
-            this.viewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMüşteriNo,
-            this.colAdSoyad,
-            this.colTC,
-            this.colTelefonu,
-            this.colOdaNumarası,
-            this.colGiriştarihi,
-            this.colÇıkıştarihi});
-            this.viewCustomer.GridControl = this.gridCustomer;
-            this.viewCustomer.Name = "viewCustomer";
-            this.viewCustomer.OptionsView.ShowAutoFilterRow = true;
+            this.oTELDataSet3.DataSetName = "OTELDataSet3";
+            this.oTELDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // colMüşteriNo
+            // gridView1
             // 
-            this.colMüşteriNo.FieldName = "Müşteri No";
-            this.colMüşteriNo.Name = "colMüşteriNo";
-            this.colMüşteriNo.Visible = true;
-            this.colMüşteriNo.VisibleIndex = 0;
-            this.colMüşteriNo.Width = 92;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MüsteriNo,
+            this.ADI,
+            this.Tc,
+            this.Telefon,
+            this.OdaNo,
+            this.GirişTarihi,
+            this.ÇıkışTarihi,
+            this.Fiyat});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
-            // colAdSoyad
+            // MüsteriNo
             // 
-            this.colAdSoyad.FieldName = "Ad Soyad";
-            this.colAdSoyad.Name = "colAdSoyad";
-            this.colAdSoyad.Visible = true;
-            this.colAdSoyad.VisibleIndex = 1;
-            this.colAdSoyad.Width = 136;
+            this.MüsteriNo.FieldName = "musteriid";
+            this.MüsteriNo.Name = "MüsteriNo";
+            this.MüsteriNo.Visible = true;
+            this.MüsteriNo.VisibleIndex = 0;
             // 
-            // colTC
+            // ADI
             // 
-            this.colTC.FieldName = "TC";
-            this.colTC.Name = "colTC";
-            this.colTC.Visible = true;
-            this.colTC.VisibleIndex = 2;
-            this.colTC.Width = 91;
+            this.ADI.FieldName = "isim";
+            this.ADI.Name = "ADI";
+            this.ADI.Visible = true;
+            this.ADI.VisibleIndex = 1;
             // 
-            // colTelefonu
+            // Tc
             // 
-            this.colTelefonu.FieldName = "Telefonu";
-            this.colTelefonu.Name = "colTelefonu";
-            this.colTelefonu.Visible = true;
-            this.colTelefonu.VisibleIndex = 3;
-            this.colTelefonu.Width = 98;
+            this.Tc.FieldName = "tc";
+            this.Tc.Name = "Tc";
+            this.Tc.Visible = true;
+            this.Tc.VisibleIndex = 2;
             // 
-            // colOdaNumarası
+            // Telefon
             // 
-            this.colOdaNumarası.FieldName = "Oda Numarası";
-            this.colOdaNumarası.Name = "colOdaNumarası";
-            this.colOdaNumarası.Visible = true;
-            this.colOdaNumarası.VisibleIndex = 4;
-            this.colOdaNumarası.Width = 59;
+            this.Telefon.FieldName = "telno";
+            this.Telefon.Name = "Telefon";
+            this.Telefon.Visible = true;
+            this.Telefon.VisibleIndex = 3;
             // 
-            // colGiriştarihi
+            // OdaNo
             // 
-            this.colGiriştarihi.FieldName = "Giriş tarihi";
-            this.colGiriştarihi.Name = "colGiriştarihi";
-            this.colGiriştarihi.Visible = true;
-            this.colGiriştarihi.VisibleIndex = 5;
-            this.colGiriştarihi.Width = 121;
+            this.OdaNo.FieldName = "odaid";
+            this.OdaNo.Name = "OdaNo";
+            this.OdaNo.Visible = true;
+            this.OdaNo.VisibleIndex = 4;
             // 
-            // colÇıkıştarihi
+            // GirişTarihi
             // 
-            this.colÇıkıştarihi.FieldName = "Çıkış tarihi";
-            this.colÇıkıştarihi.Name = "colÇıkıştarihi";
-            this.colÇıkıştarihi.Visible = true;
-            this.colÇıkıştarihi.VisibleIndex = 6;
-            this.colÇıkıştarihi.Width = 287;
+            this.GirişTarihi.FieldName = "gtarihi";
+            this.GirişTarihi.Name = "GirişTarihi";
+            this.GirişTarihi.Visible = true;
+            this.GirişTarihi.VisibleIndex = 5;
+            // 
+            // ÇıkışTarihi
+            // 
+            this.ÇıkışTarihi.FieldName = "ctarihi";
+            this.ÇıkışTarihi.Name = "ÇıkışTarihi";
+            this.ÇıkışTarihi.Visible = true;
+            this.ÇıkışTarihi.VisibleIndex = 6;
+            // 
+            // Fiyat
+            // 
+            this.Fiyat.FieldName = "fiyat";
+            this.Fiyat.Name = "Fiyat";
+            this.Fiyat.Visible = true;
+            this.Fiyat.VisibleIndex = 7;
             // 
             // Root
             // 
@@ -290,7 +291,7 @@
             // 
             // layoutControlItem1
             // 
-            this.layoutControlItem1.Control = this.gridCustomer;
+            this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(1024, 374);
@@ -305,6 +306,10 @@
             this.popupCustomer.Manager = this.barManager1;
             this.popupCustomer.Name = "popupCustomer";
             // 
+            // musteriTableAdapter
+            // 
+            this.musteriTableAdapter.ClearBeforeFill = true;
+            // 
             // formCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,11 +322,14 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "formCustomer";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.formCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musteriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupCustomer)).EndInit();
@@ -342,20 +350,23 @@
         private DevExpress.XtraBars.BarButtonItem btnAddCustomer;
         private DevExpress.XtraBars.BarButtonItem btnClose;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraGrid.GridControl gridCustomer;
-        private DevExpress.XtraGrid.Views.Grid.GridView viewCustomer;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarButtonItem btnDeleteCustomer;
         private DevExpress.XtraBars.BarButtonItem btnUpdateCustomer;
         private DevExpress.XtraBars.PopupMenu popupCustomer;
-        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMüşteriNo;
-        private DevExpress.XtraGrid.Columns.GridColumn colAdSoyad;
-        private DevExpress.XtraGrid.Columns.GridColumn colTC;
-        private DevExpress.XtraGrid.Columns.GridColumn colTelefonu;
-        private DevExpress.XtraGrid.Columns.GridColumn colOdaNumarası;
-        private DevExpress.XtraGrid.Columns.GridColumn colGiriştarihi;
-        private DevExpress.XtraGrid.Columns.GridColumn colÇıkıştarihi;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn MüsteriNo;
+        private DevExpress.XtraGrid.Columns.GridColumn ADI;
+        private DevExpress.XtraGrid.Columns.GridColumn Tc;
+        private DevExpress.XtraGrid.Columns.GridColumn Telefon;
+        private DevExpress.XtraGrid.Columns.GridColumn OdaNo;
+        private DevExpress.XtraGrid.Columns.GridColumn GirişTarihi;
+        private DevExpress.XtraGrid.Columns.GridColumn ÇıkışTarihi;
+        private DevExpress.XtraGrid.Columns.GridColumn Fiyat;
+        private OTELDataSet3 oTELDataSet3;
+        private System.Windows.Forms.BindingSource musteriBindingSource;
+        private OTELDataSet3TableAdapters.musteriTableAdapter musteriTableAdapter;
     }
 }

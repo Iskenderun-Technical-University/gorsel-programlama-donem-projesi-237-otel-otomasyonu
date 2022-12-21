@@ -69,8 +69,7 @@ namespace OtelForm
 
         private void fromAddReservation_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'oTELDataSet.oda' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.odaTableAdapter.Fill(this.oTELDataSet.oda);
+           
 
         }
     }

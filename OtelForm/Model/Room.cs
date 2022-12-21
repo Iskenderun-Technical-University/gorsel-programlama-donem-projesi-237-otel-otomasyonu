@@ -12,5 +12,10 @@ namespace OtelForm.Model
         public int OdaDurumu { get; set; }
         public string OdaTipi { get; set; }
         public int OdaKapasitesi { get; set; }
+        public string MüşteriAd { get; set; }
+        public DateTime GirişTarihi { get; set; }
+        public DateTime ÇıkışTarihi { get; set; }
+
+
     }
 }

@@ -187,7 +187,7 @@
             // 
             // btnAddRoom
             // 
-            this.btnAddRoom.Caption = "Oda Ekle";
+            this.btnAddRoom.Caption = "Oda Bilgi";
             this.btnAddRoom.Id = 12;
             this.btnAddRoom.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRoom.ImageOptions.Image")));
             this.btnAddRoom.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddRoom.ImageOptions.LargeImage")));

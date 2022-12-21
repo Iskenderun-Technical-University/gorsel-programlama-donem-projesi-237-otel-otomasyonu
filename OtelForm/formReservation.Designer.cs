@@ -41,7 +41,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnDeleteReservation = new DevExpress.XtraBars.BarButtonItem();
-            this.btnUpdateReservation = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRezervasyonOnayla = new DevExpress.XtraBars.BarButtonItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridReservation = new DevExpress.XtraGrid.GridControl();
             this.viewReservation = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -51,6 +51,7 @@
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.popupReservation = new DevExpress.XtraBars.PopupMenu(this.components);
             this.musteriTableAdapter1 = new OtelForm.OTELDataSet1TableAdapters.musteriTableAdapter();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -76,8 +77,9 @@
             this.btnAddReservation,
             this.btnClose,
             this.btnDeleteReservation,
-            this.btnUpdateReservation});
-            this.barManager1.MaxItemId = 6;
+            this.btnRezervasyonOnayla,
+            this.barButtonItem1});
+            this.barManager1.MaxItemId = 7;
             // 
             // bar1
             // 
@@ -162,13 +164,15 @@
             this.btnDeleteReservation.Name = "btnDeleteReservation";
             this.btnDeleteReservation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteReservation_ItemClick);
             // 
-            // btnUpdateReservation
+            // btnRezervasyonOnayla
             // 
-            this.btnUpdateReservation.Caption = "Rezervayon Güncelle";
-            this.btnUpdateReservation.Id = 4;
-            this.btnUpdateReservation.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateReservation.ImageOptions.Image")));
-            this.btnUpdateReservation.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUpdateReservation.ImageOptions.LargeImage")));
-            this.btnUpdateReservation.Name = "btnUpdateReservation";
+            this.btnRezervasyonOnayla.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.btnRezervasyonOnayla.Caption = "Rezervayonu Onayla";
+            this.btnRezervasyonOnayla.Id = 4;
+            this.btnRezervasyonOnayla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRezervasyonOnayla.ImageOptions.Image")));
+            this.btnRezervasyonOnayla.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRezervasyonOnayla.ImageOptions.LargeImage")));
+            this.btnRezervasyonOnayla.Name = "btnRezervasyonOnayla";
+            this.btnRezervasyonOnayla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRezerva);
             // 
             // layoutControl1
             // 
@@ -239,13 +243,23 @@
             // 
             this.popupReservation.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteReservation),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnUpdateReservation)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRezervasyonOnayla),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.popupReservation.Manager = this.barManager1;
             this.popupReservation.Name = "popupReservation";
             // 
             // musteriTableAdapter1
             // 
             this.musteriTableAdapter1.ClearBeforeFill = true;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Rezervasyonu Güncelle";
+            this.barButtonItem1.Id = 6;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevGuncelle);
             // 
             // formReservation
             // 
@@ -290,10 +304,11 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.BarButtonItem btnDeleteReservation;
-        private DevExpress.XtraBars.BarButtonItem btnUpdateReservation;
+        private DevExpress.XtraBars.BarButtonItem btnRezervasyonOnayla;
         private DevExpress.XtraBars.PopupMenu popupReservation;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private OTELDataSet1 otelDataSet11;
         private OTELDataSet1TableAdapters.musteriTableAdapter musteriTableAdapter1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

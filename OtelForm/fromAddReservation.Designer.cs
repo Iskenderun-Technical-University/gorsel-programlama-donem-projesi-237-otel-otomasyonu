@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fromAddReservation));
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery4 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
@@ -136,15 +136,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(354, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(373, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 249);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 270);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(354, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(373, 0);
             // 
             // barDockControlLeft
             // 
@@ -152,15 +152,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 225);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 246);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(354, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(373, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 225);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 246);
             // 
             // layoutControl1
             // 
@@ -175,7 +175,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 24);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(354, 225);
+            this.layoutControl1.Size = new System.Drawing.Size(373, 246);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -184,7 +184,7 @@
             this.txtName.Location = new System.Drawing.Point(91, 12);
             this.txtName.MenuManager = this.barManager1;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(251, 20);
+            this.txtName.Size = new System.Drawing.Size(270, 20);
             this.txtName.StyleController = this.layoutControl1;
             this.txtName.TabIndex = 4;
             // 
@@ -195,7 +195,7 @@
             this.txtTC.Name = "txtTC";
             this.txtTC.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtTC.Properties.MaskSettings.Set("mask", "d");
-            this.txtTC.Size = new System.Drawing.Size(251, 20);
+            this.txtTC.Size = new System.Drawing.Size(270, 20);
             this.txtTC.StyleController = this.layoutControl1;
             this.txtTC.TabIndex = 5;
             // 
@@ -207,7 +207,7 @@
             this.txtPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.txtPhone.Properties.MaskSettings.Set("mask", "(000) 000-0000");
             this.txtPhone.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
-            this.txtPhone.Size = new System.Drawing.Size(251, 20);
+            this.txtPhone.Size = new System.Drawing.Size(270, 20);
             this.txtPhone.StyleController = this.layoutControl1;
             this.txtPhone.TabIndex = 6;
             // 
@@ -223,7 +223,7 @@
             this.cbRoom.Properties.NullText = "";
             this.cbRoom.Properties.PopupSizeable = false;
             this.cbRoom.Properties.ValueMember = "odano";
-            this.cbRoom.Size = new System.Drawing.Size(251, 20);
+            this.cbRoom.Size = new System.Drawing.Size(270, 20);
             this.cbRoom.StyleController = this.layoutControl1;
             this.cbRoom.TabIndex = 7;
             // 
@@ -236,10 +236,10 @@
             // 
             this.sqlDataSource1.ConnectionName = "localhost_OTEL_Connection 2";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            customSqlQuery1.Name = "Query";
-            customSqlQuery1.Sql = "select odano from oda where odadurum != 1";
+            customSqlQuery4.Name = "Query";
+            customSqlQuery4.Sql = "select odano from oda where odadurum != 1";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
+            customSqlQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZ" +
     "T0ib2Rhbm8iIFR5cGU9IkludDMyIiAvPjwvVmlldz48L0RhdGFTZXQ+";
             // 
@@ -253,7 +253,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtCinDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtCinDate.Size = new System.Drawing.Size(251, 20);
+            this.dtCinDate.Size = new System.Drawing.Size(270, 20);
             this.dtCinDate.StyleController = this.layoutControl1;
             this.dtCinDate.TabIndex = 8;
             // 
@@ -267,7 +267,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtCoutDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtCoutDate.Size = new System.Drawing.Size(251, 20);
+            this.dtCoutDate.Size = new System.Drawing.Size(270, 20);
             this.dtCoutDate.StyleController = this.layoutControl1;
             this.dtCoutDate.TabIndex = 9;
             // 
@@ -278,7 +278,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtAmount.Properties.MaskSettings.Set("mask", "n");
-            this.txtAmount.Size = new System.Drawing.Size(251, 20);
+            this.txtAmount.Size = new System.Drawing.Size(270, 20);
             this.txtAmount.StyleController = this.layoutControl1;
             this.txtAmount.TabIndex = 10;
             // 
@@ -295,7 +295,7 @@
             this.layoutControlItem6,
             this.layoutControlItem7});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(354, 225);
+            this.Root.Size = new System.Drawing.Size(373, 246);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -303,7 +303,7 @@
             this.layoutControlItem1.Control = this.txtName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(353, 24);
             this.layoutControlItem1.Text = "İsim";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -312,7 +312,7 @@
             this.layoutControlItem2.Control = this.txtTC;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(353, 24);
             this.layoutControlItem2.Text = "TC";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -321,7 +321,7 @@
             this.layoutControlItem3.Control = this.txtPhone;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(353, 24);
             this.layoutControlItem3.Text = "Telefon";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -330,7 +330,7 @@
             this.layoutControlItem4.Control = this.cbRoom;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(353, 24);
             this.layoutControlItem4.Text = "Oda Numarası";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -339,7 +339,7 @@
             this.layoutControlItem5.Control = this.dtCinDate;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(353, 24);
             this.layoutControlItem5.Text = "Griş Tarihi";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -348,7 +348,7 @@
             this.layoutControlItem6.Control = this.dtCoutDate;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(334, 61);
+            this.layoutControlItem6.Size = new System.Drawing.Size(353, 82);
             this.layoutControlItem6.Text = "Çıkış Tarihi";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -357,7 +357,7 @@
             this.layoutControlItem7.Control = this.txtAmount;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(334, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(353, 24);
             this.layoutControlItem7.Text = "Fiyat";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(67, 13);
             // 
@@ -379,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 249);
+            this.ClientSize = new System.Drawing.Size(373, 270);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

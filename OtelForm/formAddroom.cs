@@ -61,8 +61,9 @@ namespace OtelForm
 
         private void formAddroom_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'oTELDataSet.odatype' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.odatypeTableAdapter.Fill(this.oTELDataSet.odatype);
+            // TODO: Bu kod satırı 'oTELDataSet5.odatype' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
+            this.odatypeTableAdapter1.Fill(this.oTELDataSet5.odatype);
+
 
         }
     }

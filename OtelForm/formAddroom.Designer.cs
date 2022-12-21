@@ -41,26 +41,35 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtRoomNumber = new DevExpress.XtraEditors.TextEdit();
             this.cbRoomType = new DevExpress.XtraEditors.LookUpEdit();
-            this.odatypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oTELDataSet = new OtelForm.OTELDataSet();
+            this.odatypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.oTELDataSet5 = new OtelForm.OTELDataSet5();
             this.spRoomCapa = new DevExpress.XtraEditors.SpinEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.spRoomCapacity = new DevExpress.XtraLayout.LayoutControlItem();
+            this.oTELDataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oTELDataSet4 = new OtelForm.OTELDataSet4();
+            this.odatypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oTELDataSet = new OtelForm.OTELDataSet();
             this.odatypeTableAdapter = new OtelForm.OTELDataSetTableAdapters.odatypeTableAdapter();
+            this.odatypeTableAdapter1 = new OtelForm.OTELDataSet5TableAdapters.odatypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRoomNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbRoomType.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.odatypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.odatypeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRoomCapa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRoomCapacity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet4BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.odatypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -170,7 +179,7 @@
             this.cbRoomType.Name = "cbRoomType";
             this.cbRoomType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbRoomType.Properties.DataSource = this.odatypeBindingSource;
+            this.cbRoomType.Properties.DataSource = this.odatypeBindingSource1;
             this.cbRoomType.Properties.DisplayMember = "odatipi";
             this.cbRoomType.Properties.NullText = "";
             this.cbRoomType.Properties.PopupSizeable = false;
@@ -179,15 +188,15 @@
             this.cbRoomType.StyleController = this.layoutControl1;
             this.cbRoomType.TabIndex = 6;
             // 
-            // odatypeBindingSource
+            // odatypeBindingSource1
             // 
-            this.odatypeBindingSource.DataMember = "odatype";
-            this.odatypeBindingSource.DataSource = this.oTELDataSet;
+            this.odatypeBindingSource1.DataMember = "odatype";
+            this.odatypeBindingSource1.DataSource = this.oTELDataSet5;
             // 
-            // oTELDataSet
+            // oTELDataSet5
             // 
-            this.oTELDataSet.DataSetName = "OTELDataSet";
-            this.oTELDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.oTELDataSet5.DataSetName = "OTELDataSet5";
+            this.oTELDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // spRoomCapa
             // 
@@ -255,9 +264,33 @@
             this.spRoomCapacity.Text = "Oda Kapasitesi";
             this.spRoomCapacity.TextSize = new System.Drawing.Size(71, 13);
             // 
+            // oTELDataSet4BindingSource
+            // 
+            this.oTELDataSet4BindingSource.DataSource = this.oTELDataSet4;
+            this.oTELDataSet4BindingSource.Position = 0;
+            // 
+            // oTELDataSet4
+            // 
+            this.oTELDataSet4.DataSetName = "OTELDataSet4";
+            this.oTELDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // odatypeBindingSource
+            // 
+            this.odatypeBindingSource.DataMember = "odatype";
+            this.odatypeBindingSource.DataSource = this.oTELDataSet;
+            // 
+            // oTELDataSet
+            // 
+            this.oTELDataSet.DataSetName = "OTELDataSet";
+            this.oTELDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // odatypeTableAdapter
             // 
             this.odatypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // odatypeTableAdapter1
+            // 
+            this.odatypeTableAdapter1.ClearBeforeFill = true;
             // 
             // formAddroom
             // 
@@ -278,13 +311,17 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtRoomNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbRoomType.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.odatypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.odatypeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRoomCapa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spRoomCapacity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet4BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.odatypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oTELDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +348,10 @@
         private OTELDataSet oTELDataSet;
         private System.Windows.Forms.BindingSource odatypeBindingSource;
         private OTELDataSetTableAdapters.odatypeTableAdapter odatypeTableAdapter;
+        private System.Windows.Forms.BindingSource oTELDataSet4BindingSource;
+        private OTELDataSet4 oTELDataSet4;
+        private OTELDataSet5 oTELDataSet5;
+        private System.Windows.Forms.BindingSource odatypeBindingSource1;
+        private OTELDataSet5TableAdapters.odatypeTableAdapter odatypeTableAdapter1;
     }
 }

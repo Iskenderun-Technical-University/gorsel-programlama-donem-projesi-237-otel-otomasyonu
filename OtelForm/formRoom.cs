@@ -26,12 +26,13 @@ namespace OtelForm
 
         void LoadData()
         {
+
             List<Room> rooms = new List<Room>();
             List<OdaType> odaTypes = new List<OdaType>();
             using (SqlConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
             {
                 connection.Open();
-                string oda = "SELECT * FROM oda";
+                string oda = "select * from oda";
                 using (SqlCommand command = new SqlCommand(oda, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -40,11 +41,11 @@ namespace OtelForm
                         {
                             Room room = new Room();
 
+
                             room.OdaNo = reader["odano"].ToInt();
-                            room.OdaDurumu = reader["odadurum"].ToInt();
                             room.OdaTipi = reader["odatipi"].ToString();
                             room.OdaKapasitesi = reader["odakapasite"].ToInt();
-
+                            room.OdaDurumu = reader["odadurum"].ToInt();
                             rooms.Add(room);
                         }
                     }
@@ -93,12 +94,13 @@ namespace OtelForm
             viewRoom.ExAddNewColumn((Room x) => x.OdaKapasitesi, "Oda Kapasitesi");
             viewRoom.ExAddNewColumn((Room x) => x.OdaDurumu, "Oda Durumu");
 
+
             viewRoom.RowStyle += (s, e) =>//Koşula göre renklendirme
             {
                 var row = (s as GridView).GetRow(e.RowHandle) as Room;
                 if (row == null) return;
 
-                if (row.OdaDurumu == 1) e.Appearance.BackColor = Color.Green;
+                if (row.OdaDurumu == 1) e.Appearance.BackColor = Color.Brown;
 
             };
         }
@@ -116,10 +118,7 @@ namespace OtelForm
 
         private void formRoom_Load(object sender, EventArgs e)
         {
-            // TODO: Bu kod satırı 'oTELDataSet.musteri' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.musteriTableAdapter.Fill(this.oTELDataSet.musteri);
-            // TODO: Bu kod satırı 'oTELDataSet.oda' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.odaTableAdapter.Fill(this.oTELDataSet.oda);
+          
 
         }
 
@@ -162,6 +161,33 @@ namespace OtelForm
         private void btnShowList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadData();
+        }
+
+        private void btnRevBitir(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var roomrow= viewRoom.GetFocusedRow() as Room;
+            if (roomrow == null) return;
+
+            try
+            {
+                using (var sc = new SqlConnection("Data Source=localhost;Initial Catalog=otel;Integrated Security=True"))
+                using (var cmd = sc.CreateCommand())
+                {
+                    sc.Open();
+                    cmd.CommandText = "update oda set odadurum=0 where odano=@odano";
+                    cmd.Parameters.AddWithValue("@odano", roomrow.OdaNo);
+                    cmd.ExecuteNonQuery();
+                }
+                LoadData();
+                var frm = new formMessageBox("Müşteri Çıkışı Tamamlandı.");
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                var frm = new formMessageBox(ex.Message);
+                frm.ShowDialog();
+                throw;
+            }
         }
     }
 }
