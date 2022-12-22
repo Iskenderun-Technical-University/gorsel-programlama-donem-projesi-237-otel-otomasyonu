@@ -47,10 +47,7 @@ namespace OtelForm
 
                 ekle.ExecuteNonQuery();
 
-                // seçilen odayı dolu yapma
-                string oda = @"UPDATE oda SET odadurum = 1 WHERE  odano = '" + cbRoom.EditValue + "'  ";
-                SqlCommand odaguncelle = new SqlCommand(oda, baglanti);
-                odaguncelle.ExecuteNonQuery();
+            
 
                 baglanti.Close();
 
